@@ -1,0 +1,83 @@
+{% extends 'baseapp/main.html' %}
+
+    {% block contennt %}
+     <div class='container'>
+        <div class="form-group">
+            <div>
+                <br>
+                <h1>search item</h1>
+            </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="search" class="form-control" placeholder="search item here" >
+            </form>
+            <div>
+                searching list will be displayed here....
+            </div>
+        </div>
+        <br><br>
+        <div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div style="display: flex;">
+                    
+                    <div>
+                        <h2>Product :</h2>
+                        <p>product name</p>
+                        <h2>Category:</h2>
+                        <p>product category</p>
+                        <h2>price :</h2>
+                        <p><strong>Ksh. 120</strong></p>
+                    </div>
+                
+                        <div>
+                            <div class="card" style="margin-left: 40vh; padding: 20px;">
+                                <h4>Add to cart</h4>
+                                <hr>
+                                <div>
+                                    <p><strong>Quantity</strong></p>
+                                    <input type="number" class="form-control" value="1">
+                                </div> <br>
+                                <input type="submit" value="Add" class="btn btn-secondary">
+                            </div>
+                        </div>
+                </div>
+            </form> <br>
+            <div class="card" style="width: 100%;height: 4vh;"></div> <br>
+            <table class="table">
+                <thead class="table-dark">
+                  <tr>
+                    <th>Product</th>
+                    <th>Qantity</th>
+                    <th>Price (Ksh.)</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Soap</td>
+                    <td>5</td>
+                    <td>Ksh. 50</td>
+                    <td><input type="submit" value="Remove" class="btn btn-outline-danger"></td>
+                  </tr>
+                  <tr>
+                    <td>bread</td>
+                    <td>1</td>
+                    <td>Ksh. 300</td>
+                    <td><input type="submit" value="Remove" class="btn btn-outline-danger"></td>
+                  </tr>
+                  <tr>
+                    <td>Sugar</td>
+                    <td>3</td>
+                    <td>Ksh. 100</td>
+                    <td><input type="submit" value="Remove" class="btn btn-outline-danger"></td>
+                  </tr>
+                </tbody>
+              </table> <br>
+              <div class="container" style="width: 100%; margin-bottom: 30vh;">
+                 <input type="submit" value="Sell" class="btn btn-success" style="width: 30vh;">
+              </div>
+        </div>
+            
+     </div>
+    {% endblock contennt %}

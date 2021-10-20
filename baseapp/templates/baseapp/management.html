@@ -1,0 +1,50 @@
+{% extends 'baseapp/main.html' %}
+
+    {% block contennt %}
+    <div class="container">
+        <h1>Stock Managemennt</h1>
+        <hr>
+        <div">
+           <p>List of all my products</p>
+           <form action="" method="post">
+            {% csrf_token %}
+            <input type="search" class="form-control" placeholder="search item here" >
+        </form> <br>
+        <div style="width: 100%; position: relative;">
+            <button class="btn btn-success" style="position: absolute;right: 0;">Add new Product</button> 
+        </div>
+        <br>
+        <br>
+           <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th>Product</th>
+                <th>Qantity In Stock</th>
+                <th>Price Each (Ksh.)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Soap</td>
+                <td>5</td>
+                <td>Ksh. 50</td>
+                <td><input type="submit" value="Manage" class="btn btn-outline-primary"></td>
+              </tr>
+              <tr>
+                <td>bread</td>
+                <td>1</td>
+                <td>Ksh. 300</td>
+                <td><input type="submit" value="Manage" class="btn btn-outline-primary"></td>
+              </tr>
+              <tr>
+                <td>Sugar</td>
+                <td>3</td>
+                <td>Ksh. 100</td>
+                <td><input type="submit" value="Manage" class="btn btn-outline-primary"></td>
+              </tr>
+            </tbody>
+          </table> <br>
+        </div>
+    </div>
+    {% endblock %}

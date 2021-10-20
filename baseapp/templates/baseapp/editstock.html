@@ -1,0 +1,61 @@
+{% extends 'baseapp/main.html' %}
+
+    {% block contennt %}
+        <br>
+        <div class="container">
+            <div class="card" style="width: 100%;height: auto;padding: 10px;">
+                <p>Detail :</p>
+                <hr>
+                <div style="width: 500px;">
+                    <label for="">Prodcut name:</label> <br>
+                    <input type="text" class="form-control">
+                </div>
+                <br>
+                <div style="width: 500px;">
+                    <label for="">Prodcut Description:</label> <br>
+                    <input type="text" class="form-control">
+                </div>
+                <br>
+                <div style="display: flex;">
+                    <input type="text" value="Update" class="btn btn-secondary">
+                    <input type="text" style="margin-left: 10px;" value="Delete" class="btn btn-danger">
+                </div>
+            </div>
+            <hr>
+            <div style="display: flex;">
+                <div class="card" style="padding: 20px;">
+                    <div class="cardheader">
+                        <h3>Quantity</h3>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <p>In stock 
+                            <br>
+                            <strong>300 items <input type="number" placeholder="Add to sctok quantity" class="form-control"> <br> <input type="submit" value="Add to stock" class="btn btn-secondary" name="" id=""></strong></p>
+                            <br>
+                            <strong>Or.</strong>
+                            <hr>
+                            <p>Set new quantity</p>
+                            <input type="text" placeholder="new quantity" class="form-control"> <br>
+                            <input type="submit" value="Set value" class="btn btn-secondary" name="" id="">
+                    </div>
+                </div>
+        
+                <div class="card"style="padding: 20px;margin-left:40vh ;">
+                    <div class="cardheader">
+                        <h3>Price</h3>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <p>Price each
+                            <br>
+                            <strong> Ksh. 100 <input type="number" placeholder="new price" class="form-control"> <br> <input type="submit" value="Change price" class="btn btn-secondary" name="" id=""></strong></p>
+                   
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom: 40px;">
+
+            </div>
+        </div>
+    {% endblock %}
