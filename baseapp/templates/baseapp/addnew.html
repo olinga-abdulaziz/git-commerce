@@ -1,0 +1,15 @@
+{% extends 'baseapp/main.html' %}
+
+    {% block contennt %}
+    <div class="container">
+        <br>
+        <h3>Add new product</h3>
+        <div class="form-group">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Add product" class="btn btn-success">
+            </form>
+        </div>
+    </div>
+    {% endblock %}

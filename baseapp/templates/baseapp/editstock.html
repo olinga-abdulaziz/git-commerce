@@ -3,24 +3,26 @@
     {% block contennt %}
         <br>
         <div class="container">
-            <div class="card" style="width: 100%;height: auto;padding: 10px;">
-                <p>Detail :</p>
-                <hr>
-                <div style="width: 500px;">
-                    <label for="">Prodcut name:</label> <br>
-                    <input type="text" class="form-control">
-                </div>
-                <br>
-                <div style="width: 500px;">
-                    <label for="">Prodcut Description:</label> <br>
-                    <input type="text" class="form-control">
-                </div>
-                <br>
-                <div style="display: flex;">
-                    <input type="text" value="Update" class="btn btn-secondary">
-                    <input type="text" style="margin-left: 10px;" value="Delete" class="btn btn-danger">
-                </div>
-            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                    <div class="card" style="width: 100%;height: auto;padding: 10px;">
+                        <p>Detail :</p>
+                        <hr>
+                        <div style="width: 500px;">
+                            <label for="">Prodcut name:</label> <br>
+                            {{form.product}}
+                        </div>
+                        <br>
+                        <div style="width: 500px;">
+                            <label for="">Prodcut Description:</label> <br>
+                            {{form.category}}
+                        </div>
+                        <br>
+                        <div style="display: flex;">
+                            <input type="submit" value="Update" class="btn btn-secondary">
+                        </div>
+                    </div>
+            </form>
             <hr>
             <div style="display: flex;">
                 <div class="card" style="padding: 20px;">
