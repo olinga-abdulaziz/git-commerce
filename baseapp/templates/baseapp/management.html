@@ -8,10 +8,19 @@
            <p>List of all my products</p>
            <form action="" method="post">
             {% csrf_token %}
-            <input type="search" class="form-control" placeholder="search item here" >
-        </form> <br>
+            <input type="search" name="search" class="form-control" placeholder="search item here" >
+        </form>
+         <br>
+         
+         {% for pl in productList %}
+           <div class="card" style="padding: 10px;">
+              {{pl.product}} - {{pl.category}} -{{p.quantity}}
+           </div>
+         {% endfor %}
+           
         <div style="width: 100%; position: relative;">
-            <button class="btn btn-success" style="position: absolute;right: 0;">Add new Product</button> 
+          
+            <a href="{% url 'addnewstock' %}"><button class="btn btn-success" style="position: absolute;right: 0;">Add new Product</button> </a>
         </div>
         <br>
         <br>
@@ -25,24 +34,22 @@
               </tr>
             </thead>
             <tbody>
+              {% if products %}
+              
+              {% for p in products %}
               <tr>
-                <td>Soap</td>
-                <td>5</td>
-                <td>Ksh. 50</td>
-                <td><input type="submit" value="Manage" class="btn btn-outline-primary"></td>
+                <td>{{p.product}}</td>
+                <td>{{p.quantity}}</td>
+                <td>Ksh. {{p.price}}</td>
+                
+                <td><a href="{% url 'editstock' p.id %}"><button class="btn btn-secondary">Manage</button></a></td>
               </tr>
-              <tr>
-                <td>bread</td>
-                <td>1</td>
-                <td>Ksh. 300</td>
-                <td><input type="submit" value="Manage" class="btn btn-outline-primary"></td>
-              </tr>
-              <tr>
-                <td>Sugar</td>
-                <td>3</td>
-                <td>Ksh. 100</td>
-                <td><input type="submit" value="Manage" class="btn btn-outline-primary"></td>
-              </tr>
+              {% endfor %}
+                
+              {% else %}
+              <p>No products yet!!</p>
+              {% endif %}
+            
             </tbody>
           </table> <br>
         </div>
